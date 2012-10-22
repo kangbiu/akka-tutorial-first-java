@@ -6,8 +6,21 @@ Why Actor
 When to/not to use Actor
 
 Work Items
+
 - [Brilly] Computational intensive example - (Monte Carlo Simulation of options from Lecture 7)
     - code the single thread example
     - code the traditional example
     - code the actor based example
+    - scalability analysis (different actor number)
+    - demostrate it's event based?
+- Create a fault tolerance scenario with memory leaking simulation as the lib leak memory model
 - Slide Drafting
+    - read the bullet train, jvm concurrency and wiki
+    - summarize what is actor
+    - from wiki, summarize actor horizon and language
+
+Bonus
+- Demonstrate tranparent remoting to have actors on two machines and working togehter? (win7 and OsX)
+    - need to bring our own router?
+- STM example with Transactors
+- Actor in Erlang or Haskell?
