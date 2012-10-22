@@ -21,6 +21,7 @@ End up manually check out from git bash
  Best way to learn akka
  ======================
  http://doc.akka.io/docs/akka/snapshot/index.html check out the java API
+ http://doc.akka.io/docs/akka/snapshot/java/routing.html#routing-java important for scaling
  
  Learning exercise
  =================
