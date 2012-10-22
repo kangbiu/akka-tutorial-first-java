@@ -1,0 +1,36 @@
+new ssh key for github
+======================
+1) generated in git bash 
+2) passphrase is overclocked with the usual change
+
+
+Finding
+=======
+Intellij github integration is still a bit flaky - sort out if you have cygwin and mingw32 git installed
+In intellij, you have to specify the correct git to use 
+End up manually check out from git bash
+
+- add ctrl+shift+p for pushing to master repository 
+
+- (win7) ctrl+shift and click app to run in admin mode
+ 
+ My take away
+ ============
+ Using GIT on a project with more than 1 dev
+ 
+ Best way to learn akka
+ ======================
+ http://doc.akka.io/docs/akka/snapshot/index.html check out the java API
+ 
+ Learning exercise
+ =================
+ - Study Akka - 2 hours
+ 
+ Resources
+ http://akka.io/
+ http://en.wikipedia.org/wiki/Actor_model
+ http://stackoverflow.com/questions/4493001/good-use-case-for-akka
+ 
+ Other:
+ http://sixrevisions.com/resources/git-tutorials-beginners/
+ 
