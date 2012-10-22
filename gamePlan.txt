@@ -1,0 +1,13 @@
+Goal
+====
+Compare Actor base model with traditional java threading model and new fork join model in java 7
+
+Why Actor
+When to/not to use Actor
+
+Work Items
+- [Brilly] Computational intensive example - (Monte Carlo Simulation of options from Lecture 7)
+    - code the single thread example
+    - code the traditional example
+    - code the actor based example
+- Slide Drafting
