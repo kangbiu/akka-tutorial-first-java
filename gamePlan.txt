@@ -1,6 +1,7 @@
 Goal
 ====
 Compare Actor base model with traditional java threading model and new fork join model in java 7
+Concentrate on Java as we don't have enough time to learn another language1
 
 Why Actor
 When to/not to use Actor
