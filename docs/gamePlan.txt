@@ -15,7 +15,8 @@ Work Items
     - scalability analysis (different actor number)
     - demostrate it's event based?
     - http://doc.akka.io/docs/akka/snapshot/general/supervision.html <- need to re-read and test this out
-- Create a fault tolerance scenario with memory leaking simulation as the lib leak memory model
+- [Bill] Connection waiting example
+- [Bill] Create a fault tolerance scenario with memory leaking simulation as the lib leak memory model
 - Slide Drafting
     - read the bullet train, jvm concurrency and wiki
     - summarize what is actor
