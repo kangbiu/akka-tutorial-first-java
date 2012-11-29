@@ -34,4 +34,10 @@ End up manually check out from git bash
  
  Other:
  http://sixrevisions.com/resources/git-tutorials-beginners/
- 
+
+
+ NORMINV - Returns the inverse of the normal cumulative distribution for the specified mean and standard deviation
+
+
+ JDK 1.6 = ~390ms
+ JDK 1.7 = ~380ms
