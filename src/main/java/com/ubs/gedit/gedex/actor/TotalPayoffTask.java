@@ -36,6 +36,7 @@ public class TotalPayoffTask extends RecursiveTask<Double> {
                 e.printStackTrace();
             }
         }
+
         //Divide and conqure
         int simDoneByFirstOne = simulation/2;
         int simDoneBySecondOne = simulation - simDoneByFirstOne;
