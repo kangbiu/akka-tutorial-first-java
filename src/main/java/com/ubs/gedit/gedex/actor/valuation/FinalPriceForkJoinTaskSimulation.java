@@ -1,10 +1,10 @@
-package com.ubs.gedit.gedex.actor;
+package com.ubs.gedit.gedex.actor.valuation;
 
 import com.ubs.gedit.gedex.actor.util.Distribution;
 
-import java.util.concurrent.Callable;
+import java.util.concurrent.RecursiveTask;
 
-public class FinalPriceCallableSimulation implements Callable {
+public class FinalPriceForkJoinTaskSimulation extends RecursiveTask {
 
     private double tau;
     private double riskFreeRate;
@@ -12,7 +12,7 @@ public class FinalPriceCallableSimulation implements Callable {
     private double currentPrice;
     private int timePeriods;
 
-    public FinalPriceCallableSimulation(double tau, double riskFreeRate, double annualVolatility, double currentPrice, int timePeriods) {
+    public FinalPriceForkJoinTaskSimulation(double tau, double riskFreeRate, double annualVolatility, double currentPrice, int timePeriods) {
         this.tau = tau;
         this.riskFreeRate = riskFreeRate;
         this.annualVolatility = annualVolatility;
@@ -35,7 +35,7 @@ public class FinalPriceCallableSimulation implements Callable {
     }
 
     @Override
-    public Object call() throws Exception {
+    protected Object compute() {
         return getPriceSimulation(timePeriods);
     }
 }

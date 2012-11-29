@@ -48,7 +48,6 @@ public class Distribution {
         /*-- use AS 241 --- */
         /* double ppnd16_(double *p, long *ifault)*/
         /*      ALGORITHM AS241  APPL. STATIST. (1988) VOL. 37, NO. 3
-
                 Produces the normal deviate Z corresponding to a given lower
                 tail area of P; Z is accurate to about 1 part in 10**16.
         */

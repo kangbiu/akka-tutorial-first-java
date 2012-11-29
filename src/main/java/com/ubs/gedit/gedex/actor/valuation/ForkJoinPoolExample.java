@@ -1,10 +1,6 @@
-package com.ubs.gedit.gedex.actor;
+package com.ubs.gedit.gedex.actor.valuation;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Callable;
 import java.util.concurrent.ForkJoinPool;
-import java.util.concurrent.Future;
 
 public class ForkJoinPoolExample {
 

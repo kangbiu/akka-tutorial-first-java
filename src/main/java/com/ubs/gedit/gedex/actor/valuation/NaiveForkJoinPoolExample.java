@@ -1,4 +1,4 @@
-package com.ubs.gedit.gedex.actor;
+package com.ubs.gedit.gedex.actor.valuation;
 
 import java.util.ArrayList;
 import java.util.List;
