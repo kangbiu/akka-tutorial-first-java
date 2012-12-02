@@ -1,9 +1,16 @@
 package com.ubs.gedit.gedex.actor.valuation;
 
-public class TestDriver {
+import akka.actor.*;
+
+public class TestDriver implements ResultListener {
 
     public static final int NUMBER_OF_SIMULATION = 1000000;
     public static final int TIME_STEPS = 30;
+    private long startTime;
+
+    public TestDriver() {
+        this.startTime = System.currentTimeMillis();
+    }
 
     public static void main(String[] args) throws Exception {
 
@@ -43,10 +50,28 @@ public class TestDriver {
 
         startTime = System.currentTimeMillis();
         result = pool.digitalOption(1, TIME_STEPS, NUMBER_OF_SIMULATION);  //4000 millisecs for 1,000,000
-//        result = executor.digitalOption(1, 30, 10000000);  //37 secs for 10,000,000
         duration = (System.currentTimeMillis() - startTime);
         System.out.println("Digital Option with payoff $1, simulated return = " + result);
         System.out.println("(" + duration + " millisec); Fork Join Model");
+
+
+        System.out.println("\n\nActor Model - Java 1.7");
+        final TestDriver testDriver = new TestDriver();
+        ActorSystem system = ActorSystem.create("ActorExample");
+        ActorRef actorExample = system.actorOf(new Props(
+                new UntypedActorFactory() {
+                    public UntypedActor create() {
+                        return new ActorExample(36, 40, 4, 1, 24, testDriver);
+                    }
+                }), "master");
+        actorExample.tell(new DigitalOptionValuationInput(1, TIME_STEPS, NUMBER_OF_SIMULATION));
+
     }
 
+    @Override
+    public void gotResult(double result) {
+        double duration = (System.currentTimeMillis() - startTime);
+        System.out.println("Digital Option with payoff $1, simulated return = " + result);
+        System.out.println("(" + duration + " millisec); Actor Model");
+    }
 }
