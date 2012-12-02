@@ -15,8 +15,6 @@ public class TestDriver implements ResultListener {
     public static void main(String[] args) throws Exception {
 
         SingleThreadExample singleThread = new SingleThreadExample(36, 40, 4, 1, 24);
-        System.out.println("Black Scholes result = " + singleThread.blackScholePrice());
-
         long startTime = System.currentTimeMillis();
         double result = singleThread.digitalOption(1, TIME_STEPS, NUMBER_OF_SIMULATION);  //4000 millisecs for 1,000,000
 //        double result = singleThread.digitalOption(1, 30, 10000000);  //37 secs for 10,000,000
@@ -66,12 +64,27 @@ public class TestDriver implements ResultListener {
                 }), "master");
         actorExample.tell(new DigitalOptionValuationInput(1, TIME_STEPS, NUMBER_OF_SIMULATION));
 
+        System.out.println("1 Actor test is started!!");
+
+        final TestDriver testDriver2 = new TestDriver();
+        System.out.println("\n\nActor Model with recusive function like fork join - Java 1.7");
+        ActorSystem system2 = ActorSystem.create("ActorExampleWithRecusiveFunction");
+        ActorRef recursiveActorExample = system2.actorOf(new Props(
+                new UntypedActorFactory() {
+                    public UntypedActor create() {
+                        return new RecursiveActorExample(36, 40, 4, 1, 24, testDriver2);
+                    }
+                }),"master");
+//        recursiveActorExample.tell(new DigitalOptionValuationInput(1, 12, 1));
+        recursiveActorExample.tell(new DigitalOptionValuationInput(1, TIME_STEPS, NUMBER_OF_SIMULATION));
+
+        System.out.println("2 Actor test are started!!");
     }
 
     @Override
-    public void gotResult(double result) {
+    public void gotResult(String result) {
         double duration = (System.currentTimeMillis() - startTime);
-        System.out.println("Digital Option with payoff $1, simulated return = " + result);
+        System.out.println(result);
         System.out.println("(" + duration + " millisec); Actor Model");
     }
 }

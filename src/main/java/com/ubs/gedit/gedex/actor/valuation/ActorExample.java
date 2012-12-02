@@ -78,7 +78,8 @@ public class ActorExample extends UntypedActor {
             if (returnedSimulation == valuationInput.getNumberOfSimulation()){
                 double average = totalResult / valuationInput.getNumberOfSimulation();
                 double pvAverage = average * Math.exp(-riskFreeRate * tau);
-                listener.gotResult(pvAverage);
+
+                listener.gotResult(getContext().system().name() + " with Digital Option with payoff $1, simulated return = " + pvAverage);
                 getContext().system().shutdown();
             }
 
