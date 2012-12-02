@@ -11,6 +11,6 @@ public class DisplayActor extends UntypedActor {
             System.out.print(((TotalValue) message).getTotalAsStringMessage());
         }
 
-        getContext().system().shutdown();
+//        getContext().system().shutdown();
     }
 }

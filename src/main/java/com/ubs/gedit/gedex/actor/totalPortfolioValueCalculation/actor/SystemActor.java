@@ -2,11 +2,10 @@ package com.ubs.gedit.gedex.actor.totalPortfolioValueCalculation.actor;
 
 import akka.actor.*;
 import akka.japi.Function;
+import akka.util.Duration;
 import com.ubs.gedit.gedex.actor.totalPortfolioValueCalculation.message.StockSharesMap;
 import com.ubs.gedit.gedex.actor.totalPortfolioValueCalculation.message.StockTicker;
 import com.ubs.gedit.gedex.actor.totalPortfolioValueCalculation.message.StockTickerPrice;
-import com.ubs.gedit.gedex.actor.totalPortfolioValueCalculation.message.TotalValue;
-import akka.util.Duration;
 
 import java.util.Map;
 
@@ -22,9 +21,11 @@ public class SystemActor extends UntypedActor{
     double total;
     private ActorSystem actorSystem;
 
-//    public SystemActor(ActorSystem actorSystem) {
-//        this.actorSystem = actorSystem;
-//    }
+    final long start;
+
+    public SystemActor() {
+        start = System.nanoTime();
+    }
 
     private static SupervisorStrategy strategy = new OneForOneStrategy(3,
       Duration.parse("10 seconds"), new Function<Throwable, SupervisorStrategy.Directive>() {
@@ -66,25 +67,11 @@ public class SystemActor extends UntypedActor{
         }
 
         if(counter==initialStockListSize){
-            TotalValue totalValue = new TotalValue(total);
-//            getSender().tell(getContext().ac);
-//            getContext().actorFor("")
-//            return totalValue;
-//            getSelf().tell(totalValue);
-//            getContext().actorFor("systemActor").tell(totalValue);
-//            final ActorRef displayActor = getContext().actorOf(new Props(DisplayActor.class));
-//            displayActor.forward(totalValue, getContext());
-//            actorSystem.actorFor("systemActor").
-//            actorSystem.actorFor("systemActor").tell(totalValue);
-//              getSender().tell(totalValue, getSelf());
-
-            try {
-                final ActorRef displayActor = getContext().actorOf(new Props(DisplayActor.class));
-                displayActor.tell(totalValue);
-            } catch (Exception e) {
-              getSender().tell(new akka.actor.Status.Failure(e), getSelf());
-              throw e;
-            }
+            long end = System.nanoTime();
+            System.out.println("Total Value: "+ total);
+            System.out.println("Total Number of Stocks: "+ counter);
+            System.out.println("Total Time:" + (end - start) / 1.0e9);
+            getContext().system().shutdown();
         }
     }
 }
