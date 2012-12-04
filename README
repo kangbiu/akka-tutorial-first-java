@@ -1,1 +1,6 @@
 This file was created by IntelliJ IDEA 11.1.3 for binding GitHub repository
+
+You need Mvn to download all the library
+
+1. Install Maven
+2. run "mvn install"
