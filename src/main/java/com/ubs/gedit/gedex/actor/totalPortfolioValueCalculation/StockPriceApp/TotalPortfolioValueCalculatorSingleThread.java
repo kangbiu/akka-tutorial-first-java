@@ -1,4 +1,4 @@
-package com.ubs.gedit.gedex.actor.totalPortfolioValueCalculation.StockPriceApp;
+package com.ubs.gedit.gedex.actor.totalPortfolioValueCalculation.stockPriceApp;
 
 import com.ubs.gedit.gedex.actor.totalPortfolioValueCalculation.utilities.FileReaderUtilities;
 import com.ubs.gedit.gedex.actor.totalPortfolioValueCalculation.utilities.YahooFinancePriceFetcher;

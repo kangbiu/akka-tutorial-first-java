@@ -1,0 +1,21 @@
+-minus
+
+- Support:
+-- Most in Scala, not really a lot of people using it Java
+    - Support issue, like on stack over flow -> most are about scala
+- Permance
+    - on large system - brand new way of thinking - everything is in actor and message
+
+- Documentation
+    - user-friendly, but lack of concrete examples
+
+- Plus of Akka
+    - neat and clean api
+    - Strategy is a plus
+
+
+ - Website
+ - Why Actor Not Popular - http://www.doc.ic.ac.uk/~nd/surprise_97/journal/vol2/pjm2/
+
+ - http://www.akkaessentials.in
+

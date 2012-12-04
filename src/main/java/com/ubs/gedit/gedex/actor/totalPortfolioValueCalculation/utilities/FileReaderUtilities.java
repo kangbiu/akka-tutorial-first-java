@@ -8,11 +8,9 @@ import java.util.Map;
 
 public class FileReaderUtilities {
 
-    public static Map<String, Integer> readTickers() throws IOException {
-//        InputStream is = this.getClass().getResourceAsStream("/resources/text/fileInput.txt");
+    public static Map<String, Integer> readTickers(final String fileName) throws IOException {
 
-//        final BufferedReader reader = new BufferedReader(new FileReader("/Users/kangbiu/Documents/Computer Science/Akka/exmaple-code-book/divideAndConquer/stocks.txt"));
-        final BufferedReader reader = new BufferedReader(new FileReader("./resources/stocks.txt"));
+        final BufferedReader reader = new BufferedReader(new FileReader("./resources/" + fileName));
 
         final Map<String, Integer> stocks = new HashMap<String, Integer>();
 
@@ -26,5 +24,9 @@ public class FileReaderUtilities {
         }
 
         return stocks;
+    }
+
+    public static Map<String, Integer> readTickers() throws IOException {
+        return readTickers("stocks.txt");
     }
 }
