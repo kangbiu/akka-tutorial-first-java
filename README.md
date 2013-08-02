@@ -27,11 +27,12 @@ The overall workflow is in 5 stages, namely "Initiate Game", "Give Me A Word", "
 	- get a secret key from the system and include that ket in the following communications
 	- Request & Response
 		Request:
+			<pre><code>
 			{
 				"action" : "initiateGame"
 				"userId" : "test@gmail.com"
 			}
-
+			</pre></code>
 			Explanation: 
 			1. "action" key should have the value for "initiateGame"
 			2. "userId" key should be your email address, shown on your invitation email. please contact joyce@strikingly.com if you find your email address is invalid in this programming test.
