@@ -5,20 +5,20 @@ Welcome to Strikingly Interview Test
 
 This test is based on the famous Hanger Game. You will have to write a program to guess words sent from our system.
 
-# REQUIREMENTS:
+## REQUIREMENTS:
 1. Write a prorgram according to the followings specifications
 2. Submit your program to github and send us the link
 3. Include intructions on how to run the program in README.MD file on your github
 4. ANY programming langauage - You may use ANY computer programming language that you are familiar with. It could be JAVA, PHP, RUBY, JAVASCRIPT, PYTHON, C, C++, C#, bash...... ( you name it). 
 
-# OUR EXPECTATIONS:
+## OUR EXPECTATIONS:
 Through this programming test, you should be able to demostrate:
 1. Good understanding on the programming language you are good at.
 2. Good programming practices
 3. Apply suitable algorithms to slove problems
 4. Creativity!
 
-# PROGRAMMING FLOW AND SEPECIFICATION
+## PROGRAMMING FLOW AND SEPECIFICATION
 The overall workflow is in 5 stages, namely "Initiate Game", "Give Me A Word", "Make A Guess", "Get Test Results" & "Submit Test Results"
 
 1. Initite Game
@@ -113,7 +113,7 @@ The overall workflow is in 5 stages, namely "Initiate Game", "Give Me A Word", "
 		"status":200
 	}
 
-# TECHNICAL HTTP REQUIREMTNTS:
+## TECHNICAL HTTP REQUIREMTNTS:
 - Request URL: <Please found it in your email address>
 
 - HTTP Request
@@ -131,10 +131,10 @@ The overall workflow is in 5 stages, namely "Initiate Game", "Give Me A Word", "
 5. Feel free to commit and update your code base to github. We evaluate your program based on your latest commit after you notify us by email that you have done your program. 
 6. Your access to the private repository will be REMOVED after you send us the email 
 
-# TIPS:
+## TIPS:
 use chrome and extension to simulate
 
-# Q&A
+## Q&A
 1. Can I Skip A Word?
 	yes! send another "Give Me A Word" request, i.e. "action":"nextWord"
 
